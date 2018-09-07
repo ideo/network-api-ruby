@@ -1,4 +1,4 @@
-# Network API - Ruby
+# IDEO Network API - Ruby
 
 Ruby wrappers for IDEO Network API models.
 
