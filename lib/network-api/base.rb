@@ -13,7 +13,7 @@ module NetworkApi
                    token_type: 'bearer'
 
     # log responses
-    if Rails.env.test? || ENV['DEBUG'] == '1'
+    if defined?(Rails) == 'constant' && (Rails.env.test? || ENV['DEBUG'] == '1')
       connection.use Faraday::Response::Logger
     end
   end
