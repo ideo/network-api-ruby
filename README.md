@@ -20,7 +20,7 @@ These three configuration variables must be set:
 NetworkApi::Base.configure(
   url: 'https://profile.ideo.com/api/v1',
   api_token: ENV['IDEO_NETWORK_API_TOKEN'],
-  client_id: ENV['IDEO_NETWORK_CLIENT_ID']
+  client_id: ENV['IDEO_NETWORK_OAUTH_CLIENT_ID']
 )
 ```
 
