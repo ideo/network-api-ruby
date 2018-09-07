@@ -2,19 +2,26 @@
 
 module NetworkApi
   class Base < JsonApiClient::Resource
-    class_attribute :network_api_host, :network_api_path,
-                    :api_token, :client_id
-  end
+    class_attribute :api_token, :client_id
 
-  Base.connection do |connection|
-    # set Api Token headers
-    connection.use FaradayMiddleware::OAuth2,
-                   Base.api_token,
-                   token_type: 'bearer'
+    def self.configure(url:, api_token:, client_id:)
+      self.site = url # e.g. https://profile.ideo.com/api/v1/
+      self.api_token = api_token
+      self.client_id = client_id
 
-    # log responses
-    if defined?(Rails) == 'constant' && (Rails.env.test? || ENV['DEBUG'] == '1')
-      connection.use Faraday::Response::Logger
+      # Sets up connection with token
+      connection do |connection|
+        # Set Api Token header
+        connection.use FaradayMiddleware::OAuth2,
+                       Base.api_token,
+                       token_type: 'bearer'
+
+        # Log requests if test or DEBUG == '1'
+        if defined?(Rails) == 'constant' &&
+           (Rails.env.test? || ENV['DEBUG'] == '1')
+          connection.use Faraday::Response::Logger
+        end
+      end
     end
   end
 end

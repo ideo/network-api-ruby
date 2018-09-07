@@ -15,5 +15,7 @@ group :test do
   gem "webmock", "~> 3.0"
 end
 
-# Specify your gem's dependencies in omniauth-ideo.gemspec
+# Specify your gem's dependencies in network-ruby-api.gemspec
 gemspec
+
+ruby '2.4.3'
