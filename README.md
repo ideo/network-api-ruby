@@ -2,6 +2,8 @@
 
 Ruby wrappers for IDEO Network API models.
 
+Master Branch: [ ![Codeship Status for ideo/network-api-ruby](https://app.codeship.com/projects/80e7f660-950f-0136-6e5f-4e3f8275d3aa/status?branch=master)](https://app.codeship.com/projects/304778)
+
 ## Installing
 
 Add to your `Gemfile`:
