@@ -14,9 +14,11 @@ Then `bundle install`.
 
 ## Usage
 
-These three configuration variables must be set:
+These three configuration variables must be set in an initializer (e.g. `/config/initializers/network_api.rb`):
 
 ```
+require 'network-api'
+
 NetworkApi::Base.configure(
   url: 'https://profile.ideo.com/api/v1',
   api_token: ENV['IDEO_NETWORK_API_TOKEN'],
