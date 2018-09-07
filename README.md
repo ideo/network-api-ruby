@@ -29,22 +29,22 @@ NetworkApi::Base.configure(
 Then you can use any of the supported models:
 
 ```
-ApiToken
-ApplicationOrganization
-Application
-Coupon
-Email
-InvoiceItem
-Invoice
-Location
-Organization
-PaymentMethod
-Plan
-Role
-Subscription
-UsageRecord
-User
-UsersRole
+NetworkApi::ApiToken
+NetworkApi::ApplicationOrganization
+NetworkApi::Application
+NetworkApi::Coupon
+NetworkApi::Email
+NetworkApi::InvoiceItem
+NetworkApi::Invoice
+NetworkApi::Location
+NetworkApi::Organization
+NetworkApi::PaymentMethod
+NetworkApi::Plan
+NetworkApi::Role
+NetworkApi::Subscription
+NetworkApi::UsageRecord
+NetworkApi::User
+NetworkApi::UsersRole
 ```
 
 To enable detailed request logging, you can set `ENV['DEBUG'] = '1'`
