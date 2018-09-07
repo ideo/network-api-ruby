@@ -19,8 +19,8 @@ These three configuration variables must be set:
 ```
 NetworkApi::Base.configure(
   url: 'https://profile.ideo.com/api/v1',
-  api_token: 'IDEO_NETWORK_API_TOKEN',
-  client_id: 'IDEO_NETWORK_CLIENT_ID'
+  api_token: ENV['IDEO_NETWORK_API_TOKEN'],
+  client_id: ENV['IDEO_NETWORK_CLIENT_ID']
 )
 ```
 
@@ -45,4 +45,4 @@ User
 UsersRole
 ```
 
-To enable detailed request logging, you can set `DEBUG = '1'`
+To enable detailed request logging, you can set `ENV['DEBUG'] = '1'`
