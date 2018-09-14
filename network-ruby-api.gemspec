@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "network-api/version"
 
 Gem::Specification.new do |gem|
-  gem.add_dependency "json_api_client"
+  #gem.add_dependency "json_api_client"
 
   gem.add_development_dependency "bundler", "~> 1.0"
 
