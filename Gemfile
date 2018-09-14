@@ -1,6 +1,8 @@
 source "http://rubygems.org"
 
 gem "rake", "~> 12.0"
+# So we can use this with other gems that require older versions of Faraday
+gem 'json_api_client', git: 'https://github.com/ideo/json_api_client.git', ref: '6d2e558'
 
 group :test do
   gem "addressable", "~> 2.3.8", :platforms => %i[jruby ruby_18]
