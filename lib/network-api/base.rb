@@ -34,7 +34,7 @@ module NetworkApi
       return if relationships[name].blank? ||
                 relationships[name]['data'].blank?
       type = relationships[name]['data']['type']
-      id = relationships[name]['data']['type']
+      id = relationships[name]['data']['id']
       included_data = last_result_set.included.data[type]
       return if included_data.blank?
       included_data[id.to_i] || included_data[id.to_s]
