@@ -1,5 +1,7 @@
 module NetworkApi
   class Role < Base
+    has_many :users_roles
+
     def self.find_by_organization(network_organization_id, name)
       where(
         name: name,

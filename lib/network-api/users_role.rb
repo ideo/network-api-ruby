@@ -1,5 +1,8 @@
 module NetworkApi
   class UsersRole < Base
+    has_one :user
+    has_one :role
+
     def self.create_by_uid(user_uid:, role_id:)
       create(
         user_uid: user_uid,
