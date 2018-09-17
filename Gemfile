@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gem "rake", "~> 12.0"
 
-group :test do
+group :development, :test do
   gem "addressable", "~> 2.3.8", :platforms => %i[jruby ruby_18]
   gem "coveralls"
   gem "json", :platforms => %i[jruby ruby_18 ruby_19]

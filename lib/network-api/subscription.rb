@@ -4,5 +4,7 @@ module NetworkApi
     has_one :payment_method
     has_one :coupon
     has_one :plan
+
+    # The relationships aren't working properly in 1.5.3 of this library
   end
 end
