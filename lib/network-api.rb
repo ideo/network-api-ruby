@@ -10,6 +10,7 @@ end
 require 'network-api/version'
 require 'network-api/base'
 require 'network-api/api_token'
+require 'network-api/app_metric'
 require 'network-api/application_organization'
 require 'network-api/application'
 require 'network-api/coupon'
