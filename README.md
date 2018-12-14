@@ -34,6 +34,7 @@ Then you can use any of the supported models:
 NetworkApi::ApiToken
 NetworkApi::ApplicationOrganization
 NetworkApi::Application
+NetworkApi::AppMetric
 NetworkApi::Coupon
 NetworkApi::Email
 NetworkApi::InvoiceItem
