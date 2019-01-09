@@ -7,6 +7,7 @@ module NetworkApi
     # There is a bug with included resources where ID is cast as an integer,
     # and then the resource can't be auto-linked
     property :id, type: :string
+    property :number, type: :float
 
     def self.configure(url:, api_token:, client_id:)
       self.site = url # e.g. https://profile.ideo.com/api/v1/
