@@ -14,7 +14,11 @@ describe NetworkApi::IdentityProvider do
   describe '#auth_url' do
     let(:cookies) { {} }
     let(:auth_url) do
-      subject.auth_url('okta', 'https://www.shape.space', cookies)
+      subject.auth_url(
+        provider: 'okta',
+        redirect_url: 'https://www.shape.space',
+        cookies: cookies
+      )
     end
     let(:uri) { URI.parse(auth_url) }
     let(:query_params) { CGI.parse(uri.query) }
