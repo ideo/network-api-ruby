@@ -8,6 +8,7 @@ if defined?(ActiveSupport) == 'constant'
 end
 
 require 'network-api/version'
+require 'network-api/authentication'
 require 'network-api/base'
 require 'network-api/api_token'
 require 'network-api/app_metric'

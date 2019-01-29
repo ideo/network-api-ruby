@@ -1,8 +1,12 @@
 # Base resource for models on Network API
 
+require 'securerandom'
+
 module NetworkApi
   class Base < JsonApiClient::Resource
     class_attribute :api_token, :client_id
+
+    STATE_COOKIE_NAME = 'IdeoSSO-State'.freeze
 
     # There is a bug with included resources where ID is cast as an integer,
     # and then the resource can't be auto-linked
@@ -26,6 +30,12 @@ module NetworkApi
           connection.use Faraday::Response::Logger
         end
       end
+    end
+
+    def self.state(cookies)
+      existing_state = cookies[STATE_COOKIE_NAME]
+      return existing_state if existing_state.present?
+      cookies[STATE_COOKIE_NAME] = SecureRandom.uuid
     end
 
     # Version 1.5.3 doesn't properly parse out relationships
