@@ -50,4 +50,22 @@ NetworkApi::User
 NetworkApi::UsersRole
 ```
 
+There is also an authentication utility class that is useful for generating auth URLs:
+
+```
+# URL with oAuth params for logging in
+# (cookies comes from a Rails controller context)
+NetworkApi::Authentication.sign_in_url(redirect_url: '...', cookies: cookies)
+
+# URL with oAuth params for creating a new account
+NetworkApi::Authentication.sign_up_url(redirect_url: '...', cookies: cookies)
+
+# URL with oAuth params to automatically authenticate user with a specific provider
+NetworkApi::Authentication.provider_auth_url(
+  provider: 'ford',
+  redirect_url: '...',
+  cookies: cookies
+)
+```
+
 To enable detailed request logging, you can set `ENV['DEBUG'] = '1'`
