@@ -35,6 +35,7 @@ module NetworkApi
 
     def self.uri_with_oauth_params(redirect_url:, cookies:, addtl_params: {})
       uri = URI(NetworkApi::Base.site)
+      uri.path = '/oauth/authorize'
       uri.query = addtl_params.merge(
         client_id: NetworkApi::Base.client_id,
         redirect_uri: redirect_url,

@@ -16,6 +16,20 @@ describe NetworkApi::Authentication do
   let(:redirect_url) { 'https://www.shape.space' }
   let(:addtl_params) { {} }
 
+  describe '#uri_with_oauth_params' do
+    let(:url) do
+      subject.uri_with_oauth_params(
+        redirect_url: redirect_url,
+        cookies: cookies,
+        addtl_params: addtl_params
+      )
+    end
+
+    it 'has /oauth/authorize as path' do
+      expect(url.path).to eq('/oauth/authorize')
+    end
+  end
+
   describe '#sign_in_url' do
     let(:url) do
       subject.sign_in_url(
