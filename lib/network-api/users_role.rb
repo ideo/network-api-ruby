@@ -31,5 +31,6 @@ module NetworkApi
         user_uid: user_uid,
         role_resource_type: 'Group'
       ).includes(:role)
+    end
   end
 end
