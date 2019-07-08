@@ -25,5 +25,11 @@ module NetworkApi
       return true if users_role.blank?
       users_role.destroy
     end
+
+    def self.for_groups(user_uid:)
+      where(
+        user_uid: user_uid,
+        role_resource_type: 'Group'
+      ).includes(:role)
   end
 end
