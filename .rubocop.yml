@@ -48,11 +48,6 @@ Style/Lambda:
 
 Metrics/LineLength:
   Max: 140
-  Exclude:
-    - 'config/routes.rb'
 
 Metrics/BlockLength:
   Max: 25
-
-Layout/IndentFirstArrayElement:
-  EnforcedStyle: 'consistent'
