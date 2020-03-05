@@ -3,8 +3,13 @@ require 'json_api_client'
 if defined?(ActiveSupport) == 'constant'
   # Use correct page parameters for Network API
   # (only works when included in Rails environment)
-  JsonApiClient::Paginating::Paginator.page_param = 'number'
-  JsonApiClient::Paginating::Paginator.per_page_param = 'size'
+  begin
+    JsonApiClient::Paginating::Paginator.page_param = 'number'
+    JsonApiClient::Paginating::Paginator.per_page_param = 'size'
+  rescue NoMethodError
+    # probably in test environment.
+    nil
+  end
 end
 
 require 'network-api/version'
@@ -17,6 +22,7 @@ require 'network-api/application'
 require 'network-api/coupon'
 require 'network-api/email'
 require 'network-api/group'
+require 'network-api/invitation'
 require 'network-api/invoice_item'
 require 'network-api/invoice'
 require 'network-api/location'

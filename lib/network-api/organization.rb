@@ -10,7 +10,7 @@ module NetworkApi
     def self.find_by_external_id(external_id)
       where(
         client_id: client_id,
-        external_id: external_id
+        external_id: external_id,
       ).first
     end
   end

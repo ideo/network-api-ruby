@@ -1,48 +1,53 @@
-Layout/AccessModifierIndentation:
-  EnforcedStyle: outdent
+# Trailing commas make for clearer diffs because the last line won't appear
+# to have been changed, as it would if it lacked a comma and had one added.
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
 
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
+# Cop supports --auto-correct.
+# Configuration parameters: PreferredDelimiters.
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    # Using `[]` for string arrays instead of `()`, since normal arrays are
+    # indicated with `[]` not `()`.
+    '%w': '[]'
+    '%W': '[]'
 
-Metrics/BlockNesting:
-  Max: 2
+Style/AsciiComments:
+  AllowedChars:
+    - '∆'
 
-Metrics/LineLength:
-  AllowURI: true
+Style/AndOr:
+  # `and` and `or` banned only in conditionals (conditionals), or completely (always).
+  EnforcedStyle: 'always'
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/IfUnlessModifier:
   Enabled: false
 
-Metrics/MethodLength:
-  CountComments: false
-  Max: 10
+Style/EmptyMethod:
+  Enabled: false
 
-Metrics/ParameterLists:
-  Max: 4
-  CountKeywordArgs: true
-
-Style/CollectionMethods:
-  PreferredMethods:
-    map:      'collect'
-    reduce:   'inject'
-    find:     'detect'
-    find_all: 'select'
+Style/ConditionalAssignment:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
 
-Style/DoubleNegation:
+Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-
-Style/StderrPuts:
+Style/Lambda:
   Enabled: false
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+Metrics/LineLength:
+  Max: 140
 
-Style/TrailingCommaInArguments:
-  EnforcedStyleForMultiline: comma
-
-Style/TrailingCommaInLiteral:
-  EnforcedStyleForMultiline: comma
+Metrics/BlockLength:
+  Max: 25

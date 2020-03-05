@@ -5,7 +5,7 @@ module NetworkApi
       uri = uri_with_oauth_params(
         redirect_url: redirect_url,
         cookies: cookies,
-        addtl_params: addtl_params
+        addtl_params: addtl_params,
       )
       uri.path = '/users/sign_in'
       uri.to_s
@@ -16,7 +16,7 @@ module NetworkApi
       uri = uri_with_oauth_params(
         redirect_url: redirect_url,
         cookies: cookies,
-        addtl_params: addtl_params
+        addtl_params: addtl_params,
       )
       uri.path = '/users/sign_up'
       uri.to_s
@@ -27,7 +27,7 @@ module NetworkApi
       uri = uri_with_oauth_params(
         redirect_url: redirect_url,
         cookies: cookies,
-        addtl_params: addtl_params
+        addtl_params: addtl_params,
       )
       uri.path = "/identity_providers/#{provider}/auth"
       uri.to_s
@@ -40,7 +40,7 @@ module NetworkApi
         client_id: NetworkApi::Base.client_id,
         redirect_uri: redirect_url,
         response_type: 'code',
-        state: NetworkApi::Base.state(cookies)
+        state: NetworkApi::Base.state(cookies),
       ).to_query
       uri
     end
